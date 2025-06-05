@@ -1,537 +1,509 @@
 return (function(...)
-	local varargs = {...}
-	local M = {
-			"\103\081\104\065\068\055\069\061",
-			"\117\089\085\082\114\089\075\110\114\089\119\061",
-			"\108\090\043\065\108\082\119\061",
-			"\102\082\103\067\068\081\121\107\051\090\101\121\114\056\075\110\068\105\078\054\114\057\102\061",
-			"\114\082\072\114\114\122\080\122\068\121\054\111\089\082\085\118\068\116\061\061",
-			"\087\119\061\061",
-			"\090\071\104\100\114\089\049\061",
-			"\068\089\056\110\051\057\116\061",
-			"\043\089\085\067\051\089\075\099",
-			"\069\055\116\088\119\107\112\061",
-			"\113\105\054\082\122\103\103\076\102\079\116\048\075\121\075\121\115\090\120\061",
-			"\122\089\104\111\114\089\072\048",
-			"\102\081\056\088\043\112\061\061",
-			"\101\057\103\110",
-			"\087\090\103\085\102\110\106\071\119\122\103\079\102\090\073\067\119\048\111\061",
-			"\117\081\103\054\114\112\061\061",
-			"\069\055\116\072\075\048\116\061",
-			"\122\089\103\048\113\056\080\054\108\074\119\061",
-			"\068\110\111\072\114\057\108\105\103\079\121\100\113\057\104\101\103\067\061\061",
-			"\102\081\056\088\043\056\075\050\087\082\102\061",
-			"\114\057\103\110\051\057\072\054\108\105\075\076\051\089\071\121",
-			"\119\102\111\061",
-			"\114\057\103\110\068\089\103\098\068\105\078\085\043\082\056\100\043\089\102\061",
-			"\117\074\103\074\114\067\061\061",
-			"\113\090\075\054\068\082\075\121\108\105\101\065\108\082\104\082",
-			"\089\112\061\061",
-			"\102\055\078\050\068\089\121\110\113\090\114\121",
-			"\108\057\103\110\068\089\103\098\068\105\078\085\043\082\056\100\043\089\102\061",
-			"\087\116\061\061",
-			"\114\057\103\110\114\081\103\048\051\057\103\076\114\081\056\076\043\055\069\061",
-			"\108\081\104\050\068\074\101\121\108\121\104\110\068\071\104\071\108\057\103\088\090\057\101\054\043\081\120\061",
-			"\114\057\103\110\068\082\056\098\114\119\061\061",
-			"\089\119\061\061",
-			"\090\071\104\050\068\082\101\121\087\112\061\061",
-			"\089\116\061\061",
-			"\108\105\101\088\113\089\085\074",
-			"\090\071\104\074\051\067\061\061",
-			"\114\057\103\110\108\081\056\088\043\055\075\050\087\082\102\061",
-			"\114\082\121\076\114\081\114\050\108\074\075\110\051\057\054\050\068\081\119\061",
-			"\101\057\056\098\114\119\061\061",
-			"\119\090\075\048\114\090\101\048",
-			"\114\082\072\065\051\090\119\061",
-			"\108\057\103\110\108\081\056\088\043\055\075\050\087\082\102\061",
-			"\087\112\061\061",
+	local Y = {
+			"\081\075\080\067\106\075\098\053",
+			"\104\107\081\105\104\078\122\061",
+			"\104\101\057\121\117\075\080\083",
+			"\065\100\047\115\065\049\047\055\106\100\047\120\065\049\082\120\081\109\073\061",
+			"\079\068\061\061",
+			"\116\075\080\078\065\075\098\115\065\075\122\061",
+			"\065\100\047\115\106\100\087\043\104\101\098\120\106\075\050\077",
+			"\122\107\098\055\065\107\057\055",
+			"\119\047\098\043\117\077\098\050\081\088\098\080\075\082\043\108\106\067\061\061",
+			"\072\109\051\114\110\075\077\115\117\107\065\077",
+			"\057\100\082\099\065\122\061\061",
+			"\065\078\077\120\065\049\065\114\104\083\098\115\106\100\043\114\110\049\122\061",
+			"\117\107\098\043\110\078\098\077\104\101\057\105\104\078\052\078",
+			"\104\100\047\115\110\075\047\099\110\101\051\080\081\078\082\113\081\075\072\061",
+			"\072\078\047\067\110\049\077\088\106\107\057\077\065\082\098\115\110\101\051\043\065\100\072\061",
+			"\122\072\084\061",
+			"\107\050\052\113\065\075\085\061",
+			"\069\075\052\084\065\075\087\055",
+			"\116\049\047\043\065\068\061\061",
+			"\047\049\052\105\110\109\073\061",
+			"\079\122\061\061",
+			"\104\100\047\115\104\049\082\121\081\109\098\114\079\078\072\061",
+			"\072\049\082\121\081\068\061\061",
+			"\104\050\051\050\098\083\043\098\073\107\051\117\104\115\052\080\079\109\104\061",
+			"\075\122\061\061",
+			"\079\097\061\061",
+			"\057\100\047\115",
+			"\065\078\087\105\106\107\122\061",
+			"\073\109\097\121\122\088\068\061",
+			"\116\083\047\083\065\067\061\061",
+			"\104\049\052\114\110\083\057\077\104\077\052\115\110\050\052\050\104\100\047\121\107\100\057\043\081\049\090\061",
+			"\072\049\082\121\081\082\098\114\079\078\072\061",
+			"\069\075\047\055\117\082\086\043\104\083\122\061",
+			"\110\075\082\115\106\100\097\061",
+			"\065\100\047\115\110\078\082\099\065\122\061\061",
+			"\075\097\061\061",
+			"\075\068\061\061",
+			"\073\109\097\087\098\055\097\061",
+			"\110\055\081\048\119\107\077\122\081\100\087\119\104\100\114\084",
+			"\065\100\047\115\104\049\082\121\081\109\098\114\079\078\072\061",
+			"\107\050\052\083\106\067\061\061",
+			"\069\084\113\067\104\072\052\087\072\088\043\113\104\069\072\055\081\115\106\061",
+			"\107\050\052\114\110\078\057\077\079\068\061\061",
+			"\065\100\047\115\110\075\047\099\110\101\051\080\081\078\082\113\081\075\072\061",
 		};
-	local function n(n)
-		return M[n + 2910];
+	local function N(N)
+		return Y[N + 64835];
 	end;
-	for n, F in ipairs({ { 1, 44 }, { 1, 20 }, { 21, 44 } }) do
-		while F[1] < F[2] do
-			M[F[1]], M[F[2]], F[1], F[2] = M[F[2]], M[F[1]], F[1] + 1, F[2] - 1;
+	for N, R in ipairs({ { 1, 44 }, { 1, 2 }, { 3, 44 } }) do
+		while R[1] < R[2] do
+			Y[R[1]], Y[R[2]], R[1], R[2] = Y[R[2]], Y[R[1]], R[1] + 1, R[2] - 1;
 		end;
 	end;
 	do
-		local n = M;
-		local F = string.len;
-		local o = table.concat;
-		local m = string.char;
-		local T = string.sub;
-		local Y = math.floor;
-		local t = type;
-		local d_decode_map = {
-				R = 38,
-				W = 30,
-				["\049"] = 56,
-				e = 17,
-				k = 35,
-				K = 13,
-				v = 58,
-				f = 20,
-				G = 53,
-				["\057"] = 54,
-				r = 25,
-				Q = 6,
-				["\051"] = 24,
-				L = 46,
-				H = 49,
-				b = 45,
-				E = 12,
-				["\056"] = 5,
-				["\055"] = 7,
-				M_val = 8, -- Renamed M to M_val to avoid conflict with outer M
-				c = 43,
-				t_char = 32, -- Renamed t to t_char 
+		local N = table.insert;
+		local R = string.sub;
+		local x = string.len;
+		local D = Y;
+		local y = {
+				m = 7,
+				p = 34,
+				n = 27,
+				v = 2,
+				u = 26,
+				l = 3,
+				["\053"] = 43,
+				X = 35,
+				W = 49,
+				N = 38,
+				k = 23,
+				H = 20,
+				P = 57,
+				Z = 4,
+				R = 5,
+				G = 15,
+				c = 45,
+				x = 46,
+				["\055"] = 51,
+				r = 41,
+				O = 30,
+				e = 55,
+				F = 11,
+				q = 44,
+				s = 52,
+				D = 0,
+				d = 54,
+				["\043"] = 33,
+				g = 59,
+				w = 14,
+				j = 24,
+				h = 28,
+				["\052"] = 61,
+				K = 22,
+				J = 40,
+				y = 50,
+				S = 39,
+				["\057"] = 17,
+				["\056"] = 42,
+				E = 19,
+				I = 12,
+				["\051"] = 9,
+				["\047"] = 21,
+				T = 36,
+				U = 56,
+				V = 1,
+				t = 18,
+				B = 8,
+				["\050"] = 53,
+				Q = 29,
+				["\049"] = 6,
+				Y = 63,
 				C = 48,
-				["\052"] = 42,
-				V = 34,
-				["\053"] = 59,
-				Y_val = 22, -- Renamed Y to Y_val
-				P = 1,
-				Z = 23,
-				p = 0,
-				A = 47,
-				["\050"] = 41,
-				s = 14,
-				X = 50,
-				h = 61,
-				I = 40,
-				J = 39,
-				B = 10,
-				y = 37,
-				["\047"] = 63,
-				["\048"] = 51,
-				U = 57,
-				["\043"] = 29,
-				m_val = 2, -- Renamed m to m_val
-				l = 28,
-				z = 19,
-				T_val = 15, -- Renamed T to T_val
-				a = 62,
-				d_char = 44, -- Renamed d to d_char
-				F_val = 31, -- Renamed F to F_val
-				["\054"] = 33,
-				i = 55,
-				w = 16,
-				u = 18,
-				S = 11,
-				x = 4,
-				n_val = 52, -- Renamed n to n_val
-				j = 60,
-				q = 26,
-				D = 27,
-				g = 21,
-				o_val = 36, -- Renamed o to o_val
-				N = 9,
-				O = 3,
+				b = 13,
+				o = 31,
+				A = 25,
+				L = 62,
+				f = 60,
+				a = 32,
+				i = 47,
+				z = 16,
+				["\054"] = 58,
+				M = 37,
+				["\048"] = 10,
 			};
-		d_decode_map.M = d_decode_map.M_val; d_decode_map.M_val=nil;
-		d_decode_map.t = d_decode_map.t_char; d_decode_map.t_char=nil;
-		d_decode_map.Y = d_decode_map.Y_val; d_decode_map.Y_val=nil;
-		d_decode_map.m = d_decode_map.m_val; d_decode_map.m_val=nil;
-		d_decode_map.T = d_decode_map.T_val; d_decode_map.T_val=nil;
-		d_decode_map.d = d_decode_map.d_char; d_decode_map.d_char=nil;
-		d_decode_map.F = d_decode_map.F_val; d_decode_map.F_val=nil;
-		d_decode_map.n = d_decode_map.n_val; d_decode_map.n_val=nil;
-		d_decode_map.o = d_decode_map.o_val; d_decode_map.o_val=nil;
-		local R_insert = table.insert;
-		for M_idx = 1, #n, 1 do
-			local I_str = n[M_idx];
-			if t(I_str) == "\115\116\114\105\110\103" then
-				local t_len = F(I_str);
-				local s_chars = {};
-				local k_char_idx = 1;
-				local r_accum = 0;
-				local f_count = 0;
-				while k_char_idx <= t_len do
-					local M_char = T(I_str, k_char_idx, k_char_idx);
-					local n_val_lookup = d_decode_map[M_char];
-					if n_val_lookup then
-						r_accum = r_accum + n_val_lookup * 64 ^ (3 - f_count);
-						f_count = f_count + 1;
-						if f_count == 4 then
-							f_count = 0;
-							local M_b1 = Y(r_accum / 65536);
-							local n_b2 = Y((r_accum % 65536) / 256);
-							local F_b3 = r_accum % 256;
-							R_insert(s_chars, m(M_b1, n_b2, F_b3));
-							r_accum = 0;
+		local g = table.concat;
+		local S = math.floor;
+		local L = string.char;
+		local u = type;
+		for Y = 1, #D, 1 do
+			local e = D[Y];
+			if u(e) == "\115\116\114\105\110\103" then
+				local u = x(e);
+				local A = {};
+				local P = 1;
+				local X = 0;
+				local U = 0;
+				while P <= u do
+					local Y = R(e, P, P);
+					local x = y[Y];
+					if x then
+						X = X + x * 64 ^ (3 - U);
+						U = U + 1;
+						if U == 4 then
+							U = 0;
+							local Y = S(X / 65536);
+							local R = S((X % 65536) / 256);
+							local x = X % 256;
+							N(A, L(Y, R, x));
+							X = 0;
 						end;
-					elseif M_char == "\061" then
-						R_insert(s_chars, m(Y(r_accum / 65536)));
-						if k_char_idx >= t_len or T(I_str, k_char_idx + 1, k_char_idx + 1) ~= "\061" then
-							R_insert(s_chars, m(Y((r_accum % 65536) / 256)));
+					elseif Y == "\061" then
+						N(A, L(S(X / 65536)));
+						if P >= u or R(e, P + 1, P + 1) ~= "\061" then
+							N(A, L(S((X % 65536) / 256)));
 						end;
 						break;
 					end;
-					k_char_idx = k_char_idx + 1;
+					P = P + 1;
 				end;
-				n[M_idx] = o(s_chars);
+				D[Y] = g(A);
 			end;
 		end;
 	end;
-	return (function(M_env, o_unpack, m_newproxy, T_setmeta, Y_getmeta, t_select, d_arg_varargs, F_dispatcher, s_makeslot, P_callslot, R_slotdata, p_argbuilder1, I_slotrefs, r_builddispatch, a_argbuilder2, f_const, k_counter, Q_argbuilder3, Z_decref)
-		k_counter, I_slotrefs, a_argbuilder2, R_slotdata, Z_decref, F_dispatcher, f_const, Q_argbuilder3, P_callslot, r_builddispatch, s_makeslot, p_argbuilder1 = 0, {}, function(M, n_idx)
-				local o_dispatch_table = r_builddispatch(n_idx);
-				local m_dispatch_func = function(m_op, T_a, Y_b, t_c)
-						return F_dispatcher(M, {
-							m_op,
-							T_a,
-							Y_b,
-							t_c,
-						}, n_idx, o_dispatch_table);
+	return (function(Y, x, D, y, g, S, L, X, A, u, U, h, R, G, k, Q, e, P)
+		e, k, u, X, Q, U, P, G, h, R, A = {}, function(Y, N)
+				local x = X(N);
+				local D = function(D)
+						return R(Y, { D }, N, x);
 					end;
-				return m_dispatch_func;
-			end, {}, function(M_slot)
-				I_slotrefs[M_slot] = I_slotrefs[M_slot] - 1;
-				if 0 == I_slotrefs[M_slot] then
-					I_slotrefs[M_slot], R_slotdata[M_slot] = nil, nil;
+				return D;
+			end, {}, function(Y)
+				for N = 1, #Y, 1 do
+					e[Y[N]] = 1 + e[Y[N]];
 				end;
-			end, function(F_opcode, m_args, T_regs, Y_len)
-				local d_loc, g_loc, h_loc, P_loc, w_loc, l_loc, C_loc, k_loc, L_loc, I_loc, v_loc, y_loc, r_loc, j_loc, c_loc, B_loc, q_loc, u_loc, f_loc, z_loc, A_loc, x_loc, O_loc, E_loc;
-				while F_opcode do
-					if F_opcode < 11476850 then
-						if F_opcode < 6293455 then
-							if F_opcode < 2923584 then
-								if F_opcode < 1406603 then
-									if F_opcode < 315307 then
-										d_loc = n(-2867);
-										I_loc = m_args[1];
-										F_opcode = M_env[d_loc];
-										f_loc = n(-2907);
-										r_loc = R_slotdata[T_regs[1]];
-										k_loc = r_loc[f_loc];
-										r_loc = n(-2887);
-										d_loc = F_opcode(I_loc, k_loc, r_loc);
-										k_loc = d_loc;
-										d_loc = n(-2903);
-										F_opcode = M_env[d_loc];
-										d_loc = { F_opcode(k_loc) };
-										F_opcode = M_env[n(-2871)];
-										d_loc = { o_unpack(d_loc) };
+				if D then
+					local R = D(true);
+					local x = g(R);
+					x[N(-64834)], x[N(-64792)], x[N(-64816)] = Y, U, function()
+							return 1574576;
+						end;
+					return R;
+				else
+					return y({}, { [N(-64792)] = U, [N(-64834)] = Y, [N(-64816)] = function()
+							return 1574576;
+						end });
+				end;
+			end, function(Y)
+				e[Y] = e[Y] - 1;
+				if e[Y] == 0 then
+					e[Y], u[Y] = nil, nil;
+				end;
+			end, function(Y)
+				local N, R = 1, Y[1];
+				while R do
+					e[R], N = e[R] - 1, N + 1;
+					if e[R] == 0 then
+						e[R], u[R] = nil, nil;
+					end;
+					R = Y[N];
+				end;
+			end, 0, function(Y, N)
+				local x = X(N);
+				local D = function(...)
+						return R(Y, { ... }, N, x);
+					end;
+				return D;
+			end, function(Y, N)
+				local x = X(N);
+				local D = function(D, y, g)
+						return R(Y, { D, y, g }, N, x);
+					end;
+				return D;
+			end, function(R, D, y, g)
+				local E, C, w, G, X, a, v, s, P, z, W, H, t, L, B, e, r, U, V, F, J, O, o, M;
+				while R do
+					if R < 6067844 then
+						if R < 4701038 then
+							if R < 3390559 then
+								if R < 2066108 then
+									if R < 1057530 then
+										R = 2060863;
 									else
-										g_loc = nil;
-										r_loc = Z_decref(r_loc);
-										h_loc = nil;
-										v_loc = nil;
-										d_loc = {};
-										F_opcode = M_env[n(-2885)];
-										P_loc = nil;
-										k_loc = Z_decref(k_loc);
-										A_loc = nil;
-										u_loc = nil;
-										f_loc = nil;
+										R = 3957369;
+										C = nil;
+										v = nil;
 									end;
 								else
-									E_loc = n(-2909);
-									c_loc = M_env[E_loc];
-									E_loc = c_loc(g_loc, w_loc);
-									O_loc = not E_loc;
-									F_opcode = O_loc and 12853129 or 3803764;
-									C_loc = O_loc;
+									R = r;
+									R = 14473146;
+									O = w;
 								end;
 							else
-								if F_opcode < 5125974 then
-									F_opcode = C_loc and 16312818 or 11224919;
+								if R < 4323178 then
+									J, v = B(a, J);
+									R = J and 4829843 or 5982902;
 								else
-									A_loc = n(-2868);
-									I_loc = m_args;
-									k_loc = n(-2873);
-									d_loc = n(-2907);
-									r_loc = n(-2870);
-									f_loc = n(-2880);
-									F_opcode = { [d_loc] = k_loc, [r_loc] = f_loc };
-									k_loc = s_makeslot();
-									r_loc = p_argbuilder1(147460, { k_loc });
-									R_slotdata[k_loc] = F_opcode;
-									d_loc = n(-2876);
-									v_loc = n(-2888);
-									F_opcode = { [d_loc] = r_loc };
-									r_loc = s_makeslot();
-									R_slotdata[r_loc] = F_opcode;
-									F_opcode = Q_argbuilder3(12055920, { r_loc, k_loc });
-									d_loc = n(-2896);
-									M_env[d_loc] = F_opcode;
-									F_opcode = a_argbuilder2(10021170, { r_loc, k_loc });
-									d_loc = n(-2891);
-									P_loc = n(-2894);
-									M_env[d_loc] = F_opcode;
-									d_loc = n(-2895);
-									F_opcode = M_env[d_loc];
-									f_loc = M_env[P_loc];
-									P_loc = n(-2886);
-									d_loc = F_opcode(f_loc, P_loc);
-									f_loc = d_loc;
-									P_loc = n(-2893);
-									d_loc = n(-2895);
-									g_loc = n(-2878);
-									F_opcode = M_env[d_loc];
-									d_loc = F_opcode(f_loc, P_loc);
-									P_loc = d_loc;
-									d_loc = n(-2895);
-									h_loc = n(-2889);
-									F_opcode = M_env[d_loc];
-									d_loc = F_opcode(P_loc, A_loc);
-									A_loc = d_loc;
-									d_loc = n(-2895);
-									F_opcode = M_env[d_loc];
-									u_loc = n(-2866);
-									d_loc = F_opcode(A_loc, v_loc);
-									v_loc = d_loc;
-									d_loc = n(-2895);
-									F_opcode = M_env[d_loc];
-									d_loc = F_opcode(f_loc, g_loc);
-									g_loc = d_loc;
-									d_loc = n(-2895);
-									F_opcode = M_env[d_loc];
-									d_loc = F_opcode(g_loc, u_loc);
-									u_loc = d_loc;
-									d_loc = n(-2895);
-									F_opcode = M_env[d_loc];
-									d_loc = F_opcode(g_loc, h_loc);
-									h_loc = d_loc;
-									d_loc = n(-2904);
-									F_opcode = M_env[d_loc];
-									x_loc = { F_opcode(f_loc) };
-									d_loc = x_loc[1];
-									l_loc = x_loc[2];
-									j_loc = x_loc[3];
-									F_opcode = 12954508;
-									x_loc = d_loc;
+									z = N(-64820);
+									r = Y[z];
+									z = r(V, v);
+									w = not z;
+									R = w and 5141661 or 11016016;
+									O = w;
 								end;
 							end;
 						else
-							if F_opcode < 9507392 then
-								if F_opcode < 8204141 then
-									z_loc = j_loc;
-									E_loc = n(-2898);
-									c_loc = M_env[E_loc];
-									y_loc = n(-2902);
-									E_loc = n(-2882);
-									O_loc = c_loc[E_loc];
-									E_loc = M_env[y_loc];
-									y_loc = E_loc(w_loc);
-									E_loc = n(-2874);
-									c_loc = O_loc(y_loc, E_loc);
-									F_opcode = c_loc and 13697442 or 15140302;
-									C_loc = c_loc;
+							if R < 5099784 then
+								if R < 4996096 then
+									C = J;
+									z = N(-64830);
+									r = Y[z];
+									z = N(-64799);
+									w = r[z];
+									s = N(-64798);
+									z = Y[s];
+									s = z(v);
+									z = N(-64814);
+									r = w(s, z);
+									R = r and 15911910 or 14473146;
+									O = r;
 								else
-									F_opcode = c_loc;
-									F_opcode = 15140302;
-									C_loc = O_loc;
+									o = N(-64826);
+									s = Y[o];
+									o = s(v);
+									s = N(-64800);
+									z = o == s;
+									R = 3306085;
+									w = z;
 								end;
 							else
-								if F_opcode < 10032559 then
-									I_loc = m_args[1];
-									d_loc = R_slotdata[T_regs[1]];
-									v_loc = n(-2890);
-									A_loc = n(-2870);
-									r_loc = n(-2876);
-									F_opcode = d_loc[r_loc];
-									d_loc = F_opcode(I_loc);
-									r_loc = d_loc;
-									k_loc = m_args[2];
-									d_loc = n(-2906);
-									F_opcode = M_env[d_loc];
-									P_loc = R_slotdata[T_regs[2]];
-									f_loc = P_loc[A_loc];
-									P_loc = n(-2892);
-									A_loc = k_loc[v_loc];
-									d_loc = F_opcode(r_loc, f_loc, P_loc, A_loc);
-									v_loc = n(-2870);
-									d_loc = n(-2906);
-									F_opcode = M_env[d_loc];
-									A_loc = R_slotdata[T_regs[2]];
-									P_loc = A_loc[v_loc];
-									A_loc = 4;
-									f_loc = P_loc + A_loc;
-									P_loc = n(-2884);
-									v_loc = n(-2892);
-									A_loc = k_loc[P_loc];
-									d_loc = F_opcode(r_loc, f_loc, v_loc, A_loc);
-									d_loc = n(-2906);
-									v_loc = n(-2870);
-									I_loc = nil;
-									F_opcode = M_env[d_loc];
-									A_loc = R_slotdata[T_regs[2]];
-									P_loc = A_loc[v_loc];
-									A_loc = 8;
-									f_loc = P_loc + A_loc;
-									P_loc = n(-2892);
-									v_loc = n(-2905);
-									A_loc = k_loc[v_loc];
-									k_loc = nil;
-									d_loc = F_opcode(r_loc, f_loc, P_loc, A_loc);
-									r_loc = nil;
-									d_loc = {};
-									F_opcode = M_env[n(-2875)];
+								if R < 5307050 then
+									z = N(-64820);
+									R = 11016016;
+									r = Y[z];
+									z = r(E, v);
+									w = not z;
+									O = w;
 								else
-									F_opcode = 11664740;
+									t = nil;
+									W = nil;
+									V = nil;
+									L = {};
+									X = Q(X);
+									P = Q(P);
+									R = Y[N(-64791)];
+									G = nil;
+									U = nil;
+									M = nil;
+									E = nil;
 								end;
 							end;
 						end;
 					else
-						if F_opcode < 12878871 then
-							if F_opcode < 12621859 then
-								if F_opcode < 11695529 then
-									w_loc = nil;
-									z_loc = nil;
-									F_opcode = 12954508;
+						if R < 10848123 then
+							if R < 6814019 then
+								if R < 6195567 then
+									F = N(-64807);
+									O = N(-64811);
+									z = 10;
+									H = 10;
+									o = 10;
+									s = N(-64812);
+									R = Y[O];
+									r = N(-64828);
+									w = { [r] = z, [s] = o, [F] = H };
+									O = R(v, w);
+									R = 799256;
 								else
-									d_loc = R_slotdata[T_regs[1]];
-									k_loc = n(-2876);
-									g_loc = n(-2870);
-									P_loc = n(-2870);
-									I_loc = m_args[1];
-									F_opcode = d_loc[k_loc];
-									d_loc = F_opcode(I_loc);
-									k_loc = d_loc;
-									d_loc = n(-2867);
-									F_opcode = M_env[d_loc];
-									f_loc = R_slotdata[T_regs[2]];
-									r_loc = f_loc[P_loc];
-									f_loc = n(-2892);
-									d_loc = F_opcode(k_loc, r_loc, f_loc);
-									r_loc = d_loc;
-									d_loc = n(-2867);
-									v_loc = n(-2870);
-									F_opcode = M_env[d_loc];
-									A_loc = R_slotdata[T_regs[2]];
-									P_loc = A_loc[v_loc];
-									A_loc = 4;
-									f_loc = P_loc + A_loc;
-									P_loc = n(-2892);
-									d_loc = F_opcode(k_loc, f_loc, P_loc);
-									f_loc = d_loc;
-									d_loc = n(-2867);
-									F_opcode = M_env[d_loc];
-									v_loc = R_slotdata[T_regs[2]];
-									A_loc = v_loc[g_loc];
-									v_loc = 8;
-									P_loc = A_loc + v_loc;
-									A_loc = n(-2892);
-									d_loc = F_opcode(k_loc, P_loc, A_loc);
-									A_loc = n(-2901);
-									P_loc = d_loc;
-									d_loc = n(-2908);
-									v_loc = n(-2899);
-									F_opcode = { [d_loc] = r_loc, [A_loc] = f_loc, [v_loc] = P_loc };
-									d_loc = { F_opcode };
-									F_opcode = M_env[n(-2879)];
+									U = N(-64804);
+									X = N(-64801);
+									P = N(-64795);
+									e = D;
+									L = N(-64823);
+									R = { [L] = P, [X] = U };
+									L = N(-64806);
+									P = A();
+									G = N(-64822);
+									u[P] = R;
+									X = k(10703687, { P });
+									R = { [L] = X };
+									X = A();
+									L = N(-64793);
+									u[X] = R;
+									R = h(8596742, { X, P });
+									Y[L] = R;
+									R = h(15533530, { X, P });
+									L = N(-64811);
+									Y[L] = R;
+									V = N(-64815);
+									L = N(-64821);
+									R = Y[L];
+									M = N(-64817);
+									U = Y[G];
+									G = N(-64818);
+									L = R(U, G);
+									E = N(-64827);
+									G = N(-64825);
+									U = L;
+									L = N(-64821);
+									W = N(-64803);
+									R = Y[L];
+									L = R(U, G);
+									G = L;
+									L = N(-64821);
+									R = Y[L];
+									L = R(G, M);
+									M = L;
+									L = N(-64821);
+									R = Y[L];
+									L = R(M, E);
+									t = N(-64813);
+									E = L;
+									L = N(-64821);
+									R = Y[L];
+									L = R(U, V);
+									V = L;
+									L = N(-64821);
+									R = Y[L];
+									L = R(V, W);
+									W = L;
+									L = N(-64821);
+									R = Y[L];
+									L = R(V, t);
+									t = L;
+									L = N(-64829);
+									R = Y[L];
+									B = { R(U) };
+									J = B[3];
+									R = 3957369;
+									L = B[1];
+									a = B[2];
+									B = L;
 								end;
 							else
-								if F_opcode < 12850642 then
-									F_opcode = 8570630;
-									L_loc = n(-2869);
-									y_loc = M_env[L_loc];
-									L_loc = y_loc(w_loc);
-									y_loc = n(-2872);
-									E_loc = L_loc == y_loc;
-									O_loc = E_loc;
+								if R < 9748049 then
+									L = u[y[1]];
+									e = D[1];
+									G = N(-64801);
+									E = N(-64801);
+									P = N(-64806);
+									R = L[P];
+									L = R(e);
+									P = L;
+									V = N(-64801);
+									L = N(-64833);
+									R = Y[L];
+									U = u[y[2]];
+									X = U[G];
+									U = N(-64805);
+									L = R(P, X, U);
+									X = L;
+									L = N(-64833);
+									R = Y[L];
+									M = u[y[2]];
+									G = M[E];
+									M = 4;
+									U = G + M;
+									G = N(-64805);
+									L = R(P, U, G);
+									U = L;
+									L = N(-64833);
+									R = Y[L];
+									E = u[y[2]];
+									M = E[V];
+									E = 8;
+									G = M + E;
+									M = N(-64805);
+									L = R(P, G, M);
+									G = L;
+									E = N(-64797);
+									L = N(-64796);
+									M = N(-64808);
+									R = { [L] = X, [M] = U, [E] = G };
+									L = { R };
+									R = Y[N(-64809)];
 								else
-									E_loc = n(-2909);
-									F_opcode = 3803764;
-									c_loc = M_env[E_loc];
-									E_loc = c_loc(v_loc, w_loc);
-									O_loc = not E_loc;
-									C_loc = O_loc;
+									e = D[1];
+									U = N(-64823);
+									L = N(-64833);
+									R = Y[L];
+									X = u[y[1]];
+									P = X[U];
+									X = N(-64831);
+									L = R(e, P, X);
+									P = L;
+									L = N(-64802);
+									R = Y[L];
+									L = { R(P) };
+									R = Y[N(-64794)];
+									L = { x(L) };
 								end;
 							end;
 						else
-							if F_opcode < 14687237 then
-								if F_opcode < 13343264 then
-									j_loc, w_loc = x_loc(l_loc, j_loc);
-									F_opcode = j_loc and 8189690 or 851482;
+							if R < 15389361 then
+								if R < 11514218 then
+									R = O and 6172860 or 799256;
 								else
-									L_loc = n(-2869);
-									c_loc = F_opcode;
-									y_loc = M_env[L_loc];
-									L_loc = y_loc(w_loc);
-									y_loc = n(-2877);
-									E_loc = L_loc == y_loc;
-									O_loc = E_loc;
-									F_opcode = E_loc and 8570630 or 12826504;
+									R = O and 4392070 or 2060863;
 								end;
 							else
-								if F_opcode < 15247939 then
-									F_opcode = C_loc and 1805367 or 11664740;
+								if R < 15882048 then
+									e = D[1];
+									L = u[y[1]];
+									P = D[2];
+									X = N(-64806);
+									R = L[X];
+									L = R(e);
+									X = L;
+									L = N(-64819);
+									R = Y[L];
+									E = N(-64828);
+									M = N(-64801);
+									G = u[y[2]];
+									U = G[M];
+									G = N(-64805);
+									M = P[E];
+									E = N(-64801);
+									L = R(X, U, G, M);
+									L = N(-64819);
+									e = nil;
+									R = Y[L];
+									M = u[y[2]];
+									G = M[E];
+									M = 4;
+									U = G + M;
+									E = N(-64812);
+									G = N(-64805);
+									M = P[E];
+									E = N(-64801);
+									L = R(X, U, G, M);
+									L = N(-64819);
+									R = Y[L];
+									M = u[y[2]];
+									G = M[E];
+									M = 8;
+									U = G + M;
+									G = N(-64805);
+									E = N(-64807);
+									M = P[E];
+									L = R(X, U, G, M);
+									R = Y[N(-64824)];
+									L = {};
+									P = nil;
+									X = nil;
 								else
-									L_loc = 10;
-									E_loc = 10;
-									q_loc = n(-2905);
-									c_loc = n(-2890);
-									C_loc = n(-2891);
-									y_loc = n(-2884);
-									F_opcode = M_env[C_loc];
-									B_loc = 10;
-									O_loc = { [c_loc] = E_loc, [y_loc] = L_loc, [q_loc] = B_loc };
-									C_loc = F_opcode(w_loc, O_loc);
-									F_opcode = 11224919;
+									o = N(-64826);
+									r = R;
+									s = Y[o];
+									o = s(v);
+									s = N(-64810);
+									z = o == s;
+									R = z and 3306085 or 5040794;
+									w = z;
 								end;
 							end;
 						end;
 					end;
 				end;
-				F_opcode = #Y_len;
-				return o_unpack(d_loc);
-			end, function(M_slots)
-				local n_idx, F_slot = 1, M_slots[1];
-				while F_slot do
-					I_slotrefs[F_slot], n_idx = I_slotrefs[F_slot] - 1, 1 + n_idx;
-					if 0 == I_slotrefs[F_slot] then
-						I_slotrefs[F_slot], R_slotdata[F_slot] = nil, nil;
-					end;
-					F_slot = M_slots[n_idx];
-				end;
-			end, function(M_op, n_idx)
-				local o_dispatch_table = r_builddispatch(n_idx);
-				local m_dispatch_func = function(m_arg1, T_arg2, Y_arg3)
-						return F_dispatcher(M_op, { m_arg1, T_arg2, Y_arg3 }, n_idx, o_dispatch_table);
-					end;
-				return m_dispatch_func;
-			end, function(M_op, n_idx)
-				local o_dispatch_table = r_builddispatch(n_idx);
-				local m_dispatch_func = function(...)
-						return F_dispatcher(M_op, { ... }, n_idx, o_dispatch_table);
-					end;
-				return m_dispatch_func;
-			end, function(M_slots)
-				for n_s_idx = 1, #M_slots, 1 do
-					I_slotrefs[M_slots[n_s_idx]] = I_slotrefs[M_slots[n_s_idx]] + 1;
-				end;
-				if m_newproxy then
-					local F_proxy = m_newproxy(true);
-					local o_meta = Y_getmeta(F_proxy);
-					o_meta[n(-2900)], o_meta[n(-2897)], o_meta[n(-2883)] = M_slots, f_const, function()
-							return 748439;
-						end;
-					return F_proxy;
-				else
-					return T_setmeta({}, { [n(-2897)] = f_const, [n(-2900)] = M_slots, [n(-2883)] = function()
-							return 748439;
-						end });
-				end;
+				R = #g;
+				return x(L);
 			end, function()
-				k_counter = 1 + k_counter;
-				I_slotrefs[k_counter] = 1;
-				return k_counter;
-			end, function(M_op, n_idx)
-				local o_dispatch_table = r_builddispatch(n_idx);
-				local m_dispatch_func = function(m_a1, T_a2, Y_a3, t_a4, d_a5, R_a6)
-						return F_dispatcher(M_op, {
-							m_a1,
-							T_a2,
-							Y_a3,
-							t_a4,
-							d_a5,
-							R_a6,
-						}, n_idx, o_dispatch_table);
-					end;
-				return m_dispatch_func;
+				P = P + 1;
+				e[P] = 1;
+				return P;
 			end;
-		return (P_callslot(5389476, {}))(o_unpack(d_arg_varargs));
-	end)(getfenv and getfenv() or _ENV, unpack or table[n(-2881)], newproxy, setmetatable, getmetatable, select, varargs);
+		return (G(6717133, {}))(x(L));
+	end)(getfenv and getfenv() or _ENV, unpack or table[N(-64832)], newproxy, setmetatable, getmetatable, select, { ... });
 end)(...);
